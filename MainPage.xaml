@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ExampleTintColorApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <ListView
+        x:Name="ListView"
+        VerticalOptions="Fill"
+        HasUnevenRows="True">
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <VerticalStackLayout>
+                    <Label Text="{Binding .}" />
+                    <Image
+                        Source="icon_error.svg"
+                        WidthRequest="50"
+                        HeightRequest="50">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Brown" />
+                        </Image.Behaviors>
+                    </Image>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout>
+                        <Label Text="Image in std cell with tint:" />
+                        <Image
+                            Source="icon_error.svg"
+                            WidthRequest="50"
+                            HeightRequest="50">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="Brown" />
+                            </Image.Behaviors>
+                        </Image>
+                    </VerticalStackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
